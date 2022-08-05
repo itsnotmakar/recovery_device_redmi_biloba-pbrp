@@ -19,9 +19,6 @@
 # Allow building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-# Allow putting ELF in PRODUCT_COPY_FILES (required by vibrator)
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-
 DEVICE_PATH := device/redmi/biloba
 PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
@@ -139,7 +136,6 @@ TARGET_USES_MKE2FS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_FRAMERATE := 60
 TW_SCREEN_BLANK_ON_BOOT := true
-#TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_SDCARD_ON_DATA := true

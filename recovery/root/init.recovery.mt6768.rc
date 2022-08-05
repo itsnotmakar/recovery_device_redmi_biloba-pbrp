@@ -64,12 +64,6 @@ service keymaster-4-0 /system/bin/android.hardware.keymaster@4.0-service.beanpod
     oneshot
     seclabel u:r:recovery:s0
 
-service vibrator-biloba /system/bin/hw/android.hardware.vibrator-service.biloba
-    user root
-    group root
-    class hal
-    seclabel u:r:recovery:s0
-
 on property:vendor.sys.listener.registered=true
     start gatekeeper-1-0
     
@@ -95,7 +89,6 @@ on property:twrp.all.users.decrypted=true
 on boot
     start boot-hal-1-1
     start health-hal-2-1
-    start vibrator-biloba
 
 # Fix flashlight on orangefox
 on property:ro.orangefox.boot=1

@@ -1,5 +1,5 @@
 cc_library_static {
-    name: "libvibratorrosemary",
+    name: "libvibratorbiloba",
     shared_libs: [
         "libbase",
         "libbinder_ndk",
@@ -14,17 +14,17 @@ cc_library_static {
 }
 
 cc_binary {
-    name: "android.hardware.vibrator-service.rosemary",
+    name: "android.hardware.vibrator-service.biloba",
     relative_install_path: "hw",
-    init_rc: ["vibrator-rosemary.rc"],
-    vintf_fragments: ["vibrator-rosemary.xml"],
+    init_rc: ["vibrator-biloba.rc"],
+    vintf_fragments: ["vibrator-biloba.xml"],
     shared_libs: [
         "libbase",
         "libbinder_ndk",
         "android.hardware.vibrator-ndk_platform",
     ],
     static_libs: [
-        "libvibratorrosemary",
+        "libvibratorbiloba",
     ],
     srcs: ["main.cpp"],
 }

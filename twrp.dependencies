@@ -1,8 +1,0 @@
-[
-    {
-		"remote": "github",
-		"repository": "RedmiNote10S/kernel_xiaomi_rosemary",
-		"target_path": "kernel/redmi/rosemary",
-		"revision": "lineage-18.1"
-    }
-]

@@ -26,7 +26,7 @@
 
 ## Removable storage
 /sdcard1            vfat      /devices/platform/mt_usb*         /dev/block/mmcblk0                       flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
-/usb_otg            vfat      /devices/platform/externdevice*              /dev/block/sdd                           flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable;
+/usb_otg            vfat      /devices/platform/externdevice*              /dev/block/sdd                flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable;
 
 ## Internal storage (for OrangeFox)
 /storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;

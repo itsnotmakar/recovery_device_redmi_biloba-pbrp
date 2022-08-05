@@ -22,7 +22,7 @@ ALLOW_MISSING_DEPENDENCIES := true
 # Allow putting ELF in PRODUCT_COPY_FILES (required by vibrator)
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
-DEVICE_PATH := device/redmi/rosemary
+DEVICE_PATH := device/redmi/biloba
 PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 
 # Architecture
@@ -39,14 +39,14 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := rosemary
+TARGET_BOOTLOADER_BOARD_NAME := biloba
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := mt6785
+TARGET_BOARD_PLATFORM := mt6768
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := rosemary,secret,maltose
+TARGET_OTA_ASSERT_DEVICE := biloba
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
@@ -139,7 +139,7 @@ TARGET_USES_MKE2FS := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_FRAMERATE := 60
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_SUPPORT_INPUT_AIDL_HAPTICS := true
+#TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 RECOVERY_SDCARD_ON_DATA := true

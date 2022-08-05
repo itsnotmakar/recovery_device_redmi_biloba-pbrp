@@ -1,0 +1,4 @@
+service vibrator-biloba /vendor/bin/hw/android.hardware.vibrator-service.biloba
+    class hal
+    user root
+    group root

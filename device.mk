@@ -16,7 +16,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/redmi/rosemary
+LOCAL_PATH := device/redmi/biloba
 
 # A/B
 AB_OTA_PARTITIONS += \
@@ -60,18 +60,18 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Boot control HAL
-PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-mtkimpl.recovery
+#PRODUCT_PACKAGES += \
+#    android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.rosemary
+#PRODUCT_PACKAGES += \
+#    android.hardware.vibrator-service.biloba
 
 # Copy the vibrator into recovery image
-PRODUCT_COPY_FILES += \
-	$(OUT_DIR)/target/product/rosemary/system/bin/hw/android.hardware.vibrator-service.rosemary:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hw/android.hardware.vibrator-service.rosemary
+#PRODUCT_COPY_FILES += \
+#	$(OUT_DIR)/target/product/biloba/system/bin/hw/android.hardware.vibrator-service.biloba:$(TARGET_COPY_OUT_RECOVERY)/root/system/bin/hw/android.hardware.vibrator-service.biloba
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -79,8 +79,8 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # MTK PlPath Utils
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils.recovery
+#PRODUCT_PACKAGES += \
+#    mtk_plpath_utils.recovery
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client

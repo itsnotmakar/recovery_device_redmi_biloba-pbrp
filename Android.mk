@@ -18,6 +18,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE), rosemary)
+ifeq ($(TARGET_DEVICE), biloba)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif

@@ -1,4 +1,4 @@
-# TWRP device tree for Redmi Note 8 Pro 2021 (biloba)
+# PBRP device tree for Redmi Note 8 Pro 2021 (biloba)
 
 This tree is based on the [Redmi Note 10S (rosemary)](https://github.com/RedmiNote10S/recovery_device_redmi_rosemary) device tree
 

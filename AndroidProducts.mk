@@ -17,5 +17,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/twrp_biloba.mk
+     $(LOCAL_DIR)/_biloba.mk
 

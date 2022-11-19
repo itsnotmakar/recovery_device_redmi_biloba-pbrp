@@ -26,12 +26,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit from biloba device
 $(call inherit-product, device/redmi/biloba/device.mk)
 
-# Inherit some common TWRP stuff
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Inherit some common PBRP stuff
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := biloba
-PRODUCT_NAME := twrp_biloba
+PRODUCT_NAME := omni_biloba
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := biloba
 PRODUCT_MANUFACTURER := Xiaomi

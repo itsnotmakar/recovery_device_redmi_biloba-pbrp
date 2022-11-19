@@ -17,5 +17,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/_biloba.mk
+     $(LOCAL_DIR)/omni_biloba.mk
 

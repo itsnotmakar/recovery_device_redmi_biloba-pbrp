@@ -1,13 +1,32 @@
-# fstab
-system                                     /system          ext4                ro wait,slotselect,logical
-vendor                                     /vendor          ext4                ro wait,slotselect,logical
-product                                    /product         ext4                ro wait,slotselect,logical
+# mount point       fstype    device                                                                flags
 
-/dev/block/platform/bootdevice/by-name/md_udc       /metadata        ext4                noatime,nosuid,nodev,discard wait,check,formattable
+## User-writable / Storage partitions
+/boot               emmc      /dev/block/platform/bootdevice/by-name/boot                           flags=display="Boot";flashimg=1;backup=1;slotselect;
+/vendor_boot        emmc      /dev/block/platform/bootdevice/by-name/vendor_boot                    flags=display="Vendor Boot";flashimg=1;backup=1;slotselect;
+/cache              ext4      /dev/block/platform/bootdevice/by-name/rescue                         flags=display="Cache";
+/vbmeta             emmc      /dev/block/platform/bootdevice/by-name/vbmeta                         flags=slotselect;display="VBMeta";backup=1;flashimg=1;
+/cust               ext4      /dev/block/platform/bootdevice/by-name/cust                           flags=display="Cust";
 
-/dev/block/by-name/userdata                         /data            f2fs                noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065 wait,check,formattable,latemount,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2,keydirectory=/metadata/vold/metadata_encryption
+## Sensitive data (IMEI, MAC, ...)
+/protect_f          ext4      /dev/block/platform/bootdevice/by-name/protect1                       flags=display="Protect_f";backup=1;
+/protect_s          ext4      /dev/block/platform/bootdevice/by-name/protect2                       flags=display="Protect_s";backup=1;
+/nvram              emmc      /dev/block/platform/bootdevice/by-name/nvram                          flags=display="Nvram";backup=1;
+/nvdata             ext4      /dev/block/platform/bootdevice/by-name/nvdata                         flags=display="Nvdata";backup=1;
+/persist            ext4      /dev/block/platform/bootdevice/by-name/persist                        flags=display="Persist";backup=1;
+/persistent         emmc      /dev/block/platform/bootdevice/by-name/frp                            flags=display="Persistent";backup=1;
 
-/dev/block/platform/bootdevice/by-name/misc         /misc            emmc                defaults       defaults
+## Firmware
+/dtbo               emmc      /dev/block/platform/bootdevice/by-name/dtbo	                        flags=slotselect;
+/logo	            emmc      /dev/block/platform/bootdevice/by-name/logo	                        flags=display="Logo";backup=1;
+/expdb              emmc      /dev/block/platform/bootdevice/by-name/expdb
+/seccfg             emmc      /dev/block/platform/bootdevice/by-name/seccfg
+/tee                emmc      /dev/block/platform/bootdevice/by-name/tee                            flags=slotselect;
+/spmfw              emmc      /dev/block/platform/bootdevice/by-name/spmfw                          flags=slotselect;
+/otp                emmc      /dev/block/platform/bootdevice/by-name/otp
 
-/dev/block/by-name/boot                             /boot            emmc                defaults       slotselect
+## Removable storage
+/sdcard1 vfat /dev/block/mmcblk1p1 /dev/block/mmcblk1 flags=fsflags=utf8;display="MicroSD";storage;wipeingui;removable
+/usb_otg            vfat      /devices/platform/externdevice*              /dev/block/sdd                flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;removable;
 
+## Internal storage (for OrangeFox)
+/storage            f2fs      /data/media/0                                                         flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable;
